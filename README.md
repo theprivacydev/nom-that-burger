@@ -3,7 +3,7 @@
 # Nom That Burger
 
 ## Description
-This is a responsive, Full-Stack Web Application that allows the user to type in and save their favorite burgers to a MySQL database. The burgers appear to the left on the screen as soon as they are saved, and a "Devour Now!" Button also appears next to each burger, allowing the user to click and "eat" the burger, moving it to the right side of the screen. Node.js and Express.js are used in the backend of this application to build the server side functionality, and Handlebars.js is used for the template engine.  
+This is a responsive, Full-Stack Web Application deployed with Heroku that allows the user to type in and save their favorite burgers to a MySQL database. The burgers appear to the left on the screen as soon as they are saved, and a "Devour Now!" Button also appears next to each burger, allowing the user to click and "eat" the burger, moving it to the right side of the screen. Node.js and Express.js are used in the backend of this application to build the server side functionality, and Handlebars.js is used for the template engine.  
 
 ## Table of Contents
   - [Installation](#installation)
@@ -34,6 +34,7 @@ To use this application, simply click on the deployed application link, the clic
 * Express.js 
 * MySQL 
 * Handlebars.js
+* Heroku
 
 ## License
 
