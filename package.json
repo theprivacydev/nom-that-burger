@@ -1,0 +1,24 @@
+{
+  "name": "nom-that-burger",
+  "version": "1.0.0",
+  "description": "App that utiilizes express, handlebars, and mysql to allow user to type in and save their favorite burger and then devour it!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaymemizelle/nom-that-burger.git"
+  },
+  "author": "Jayme Mizelle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaymemizelle/nom-that-burger/issues"
+  },
+  "homepage": "https://github.com/jaymemizelle/nom-that-burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  }
+}
