@@ -4,7 +4,7 @@ module.exports = {
 
     selectAll: (table, cb) => {
         let query = "SELECT * FROM ?"
-        connnection.query(query, [table], (err, result) => {
+        connection.query(query, [table], (err, result) => {
             if (err) throw err;
             cb(result);
         });
@@ -14,7 +14,7 @@ module.exports = {
 
     insertOne: (tableForInsert, whatToInsert, cb) => {
         let query = "INSERT INTO ? VALUE ?"
-        connnection.query(query, [tableForInsert, whatToInsert], (err, result) => {
+        connection.query(query, [tableForInsert, whatToInsert], (err, result) => {
             if (err) throw err;
             cb(result);
         });
@@ -24,7 +24,7 @@ module.exports = {
 
     updateOne: (tableToUpdate, whatToUpdate, itemId, cb) => {
         let query = "UPDATE ? SET ? WHERE id = ?"
-        connnection.query(query, [tableToUpdate, whatToUpdate, itemId], (err, result) => {
+        connection.query(query, [tableToUpdate, whatToUpdate, itemId], (err, result) => {
             if (err) throw err;
             cb(result)
         });

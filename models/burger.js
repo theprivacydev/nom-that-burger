@@ -6,19 +6,19 @@ const burger = {
 
 
     selectAll: function(cb) {
-        orm.selectAll("burgers", (res) => {
+        orm.selectAll('burgers', (res) => {
             cb(res);
         });
     },
 
     insertOne: function(cb) {
-        orm.insertOne("burgers", vals, (res) => {
+        orm.insertOne('burgers', vals, (res) => {
             cb(res);
         });
     },
 
     updateOne: function(cb) {
-        orm.selectAll("burgers", condition, id, (res) => {
+        orm.selectAll('burgers', condition, id, (res) => {
             cb(res);
         });
     },
