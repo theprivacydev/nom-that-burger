@@ -2,31 +2,31 @@ const connection = require('./connection.js');
 
 module.exports = {
 
-    selectAll: (table) => {
+    selectAll: (table, cb) => {
         let query = "SELECT * FROM ?"
-        connnection.query(query, [table], (err, res) => {
+        connnection.query(query, [table], (err, result) => {
             if (err) throw err;
-            console.log(res);
+            cb(result);
         });
     // End selectAll method
     },
 
 
-    insertOne: (tableForInsert, whatToInsert) => {
+    insertOne: (tableForInsert, whatToInsert, cb) => {
         let query = "INSERT INTO ? VALUE ?"
-        connnection.query(query, [tableForInsert, whatToInsert], (err, res) => {
+        connnection.query(query, [tableForInsert, whatToInsert], (err, result) => {
             if (err) throw err;
-            console.log(res);
+            cb(result);
         });
     // End insertOne method
     },
 
 
-    updateOne: (tableToUpdate, whatToUpdate, itemId) => {
+    updateOne: (tableToUpdate, whatToUpdate, itemId, cb) => {
         let query = "UPDATE ? SET ? WHERE id = ?"
-        connnection.query(query, [tableToUpdate, whatToUpdate, itemId], (err, res) => {
+        connnection.query(query, [tableToUpdate, whatToUpdate, itemId], (err, result) => {
             if (err) throw err;
-            console.log(res);
+            cb(result)
         });
     // End updateOne method
     }

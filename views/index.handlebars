@@ -1,1 +1,27 @@
 {{!-- Create handlebars template--}}
+
+<h1>Nom that Burger</h1>
+<h2>Which Burger will you choose?</h2>
+
+<ul>
+    {{#each burgers}}
+        <li> {{ burger }}</li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each burgers}}
+        <li>{{ devouredBurger }}</li>
+    {{/each}}
+</ul>
+
+<h2>Add Your Own Burger!</h2>
+<form>
+
+    <div>
+        <input type="text"><br>
+        <button type="submit">Make My Burger!</button>
+
+    </div>
+
+</form>
