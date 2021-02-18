@@ -27,10 +27,5 @@ const burger = {
 }
 
 
-
-
-
-
-
 // Export burger.js
 module.exports = burger;

@@ -1,7 +1,7 @@
 $(function() {
 
     $('.devour-btn').on('click', (event) => {
-
+        alert("devour-btn clicked!");
         let id = $(this).data('id');
 
         let burgerStatus = {
