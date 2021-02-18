@@ -53,10 +53,10 @@ const orm = {
 }
 
 
-function printQuesMarks(number) {
+function printQuesMarks(parameter) {
     let arr = [];
 
-    for (let i = 0; i< number; i++) {
+    for (let i = 0; i< parameter; i++) {
         arr.push("?");
     }
     return arr.toString();

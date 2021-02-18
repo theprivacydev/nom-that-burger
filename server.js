@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 // Middleware to parse json
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 
 // Set handlebars as template engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
