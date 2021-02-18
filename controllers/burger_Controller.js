@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     console.log('WE ARE IN GET');
     burgers.selectAll((data) => {
-        let burgersObj = {burgers: data};
+        let burgersObj = { burgers : data };
         console.log(burgersObj);
         res.render("index", burgersObj);
     })
@@ -24,7 +24,7 @@ router.post("/api/burgers/", (req, res) => {
 
 
 // Update 
-router.put("/api/cats/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
     let condition = "id = " + req.params.id;
     console.log("condition in put", condition);
 

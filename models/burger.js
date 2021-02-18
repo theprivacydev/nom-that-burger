@@ -2,7 +2,7 @@ const orm = require('../config/orm.js');
 
 // Call orm functions here using burger specific input
 
-const burger = {
+const burgers = {
 
 
     selectAll: function(cb) {
@@ -11,21 +11,19 @@ const burger = {
         });
     },
 
-    insertOne: function(cb) {
+    insertOne: function(cols, vals, cb) {
         orm.insertOne('burgers', cols, vals, (res) => {
             cb(res);
         });
     },
 
-    updateOne: function(cb) {
-        orm.selectAll('burgers', objColVals, condition, id, (res) => {
+    updateOne: function(objColVals, condition, cb) {
+        orm.selectAll('burgers', objColVals, condition, (res) => {
             cb(res);
         });
     },
-
-
 }
 
 
 // Export burger.js
-module.exports = burger;
+module.exports = burgers;
