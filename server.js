@@ -1,23 +1,24 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-
-const app = express();
+// Import routes
+const routes = require('./controllers/burger_Controller.js');
 
 // Define PORT
 const PORT = process.env.PORT || 8080;
 
+const app = express();
+
+app.use(express.static(__dirname + '/public'));
+
 // Middleware to parse json
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static(__dirname + '/public'));
 
 // Set handlebars as template engine
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
-// Import routes
-const routes = require('./controllers/burger_Controller.js');
-
+// Use routes
 app.use(routes);
 
 
