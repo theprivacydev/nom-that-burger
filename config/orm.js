@@ -1,38 +1,88 @@
 const connection = require('./connection.js');
 
-module.exports = {
+const orm = {
 
     selectAll: (table, cb) => {
-        let query = "SELECT * FROM ?"
-        connection.query(query, [table], (err, result) => {
+        let query = "SELECT * FROM " + table + ";"
+        connection.query(query, (err, res) => {
             if (err) throw err;
-            cb(result);
+            cb(res);
         });
     // End selectAll method
     },
 
 
-    insertOne: (tableForInsert, whatToInsert, cb) => {
-        let query = "INSERT INTO ? VALUE ?"
-        connection.query(query, [tableForInsert, whatToInsert], (err, result) => {
+    insertOne: (table, cols, vals, cb) => {
+        let query = "INSERT INTO " + table;
+
+        query += " (";
+        query += cols.toString();
+        query += ") ";
+        query += "VALUES (";
+        query += printQuesMarks(vals.length);
+        query += ") ";
+
+        console.log(query);
+
+
+        connection.query(query, vals, (err, res) => {
             if (err) throw err;
-            cb(result);
+            cb(res);
         });
     // End insertOne method
     },
 
 
-    updateOne: (tableToUpdate, whatToUpdate, itemId, cb) => {
-        let query = "UPDATE ? SET ? WHERE id = ?"
-        connection.query(query, [tableToUpdate, whatToUpdate, itemId], (err, result) => {
+    updateOne: (table, objColVals, condition, cb) => {
+        let query = "UPDATE " + table;
+
+        query += " SET ";
+        query += objToSql(objColVals);
+        query += " WHERE ";
+        query += condition;
+
+        console.log(query);
+
+        connection.query(query, (err, res) => {
             if (err) throw err;
-            cb(result)
+            cb(res)
         });
     // End updateOne method
     }
+// End orm
+}
+
+
+function printQuesMarks(number) {
+    let arr = [];
+
+    for (let i = 0; i< number; i++) {
+        arr.push("?");
+    }
+    return arr.toString();
+}
+
+
+function objToSql(obj) {
+    let arr = [];
+    for (var key in obj) {
+        let value = obj[key];
+        if(Object.hasOwnProperty.call(obj, key)) {
+
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
+
+            arr.push(key + "=" + value);
+        }
+    }
+    return arr.toString();
+}
+
+
 
 
 
 
 // End module.exports object
-}
+module.exports = orm;

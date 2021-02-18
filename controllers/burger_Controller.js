@@ -15,16 +15,27 @@ router.get("/", (req, res) => {
 });
 
 // Post
-router.post("/api/burgers", (req, res) => {
+router.post("/api/burgers/", (req, res) => {
     console.log('WE ARE IN POST');
-    burgers.insertOne(req.body.burger, (result) => {
-        res.json({ id: result.id })
+    burgers.insertOne(["burger_name", "devoured"] , [req.body.burger_name, req.body.devoured], (result) => {
+        res.json({ id: result.insertId })
     });
 });
 
 
 // Update 
-// router.updateOne
+router.put("/api/cats/:id", (req, res) => {
+    let condition = "id = " + req.params.id;
+    console.log("condition in put", condition);
+
+    burgers.updateOne({ devoured: req.body.devoured }, condition, (result) => {
+        if(result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
 
 
 

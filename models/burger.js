@@ -12,13 +12,13 @@ const burger = {
     },
 
     insertOne: function(cb) {
-        orm.insertOne('burgers', vals, (res) => {
+        orm.insertOne('burgers', cols, vals, (res) => {
             cb(res);
         });
     },
 
     updateOne: function(cb) {
-        orm.selectAll('burgers', condition, id, (res) => {
+        orm.selectAll('burgers', objColVals, condition, id, (res) => {
             cb(res);
         });
     },
