@@ -1,6 +1,8 @@
 $( document ).ready(function() {
-    $('.devour-btn').on('click', (event) => {
-        let id = $(this).data('id');
+    $('.devour-btn').on('click', function(event) {
+        event.preventDefault();
+        let id = $(this).attr('data-id');
+        console.log(id);
 
         let burgerStatus = {
             devoured: true
@@ -20,7 +22,7 @@ $( document ).ready(function() {
     // End devour-btn event listener
     });
 
-    $('.make-burger-btn').on('click', (event) => {
+    $('.make-burger-btn').on('click', function(event) {
         event.preventDefault();
         let madeBurger = {
             burger_name: $('#input-burger').val().trim(),

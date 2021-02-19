@@ -18,7 +18,7 @@ const burgers = {
     },
 
     updateOne: function(objColVals, condition, cb) {
-        orm.selectAll('burgers', objColVals, condition, (res) => {
+        orm.updateOne('burgers', objColVals, condition, (res) => {
             cb(res);
         });
     },
