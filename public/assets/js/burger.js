@@ -7,7 +7,7 @@ $( document ).ready(function() {
         }
         console.log('right after click burger status is: ', burgerStatus);
 
-        $.ajax('/api/burgers/:' + id, {
+        $.ajax('/api/burgers/' + id, {
             type: "PUT",
             data: burgerStatus
         }).then(
