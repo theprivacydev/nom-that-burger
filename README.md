@@ -19,7 +19,7 @@ This is a responsive, Full-Stack Web Application deployed with Heroku that allow
 There are no special installation instructions required for this application as it is a live, deployed application.
 
 ## Deployment
-* Deployed App Link: 
+* Deployed App Link: https://nom-that-burger.herokuapp.com/
 
 ## Usage
 To use this application, simply click on the deployed application link, the click into the text box on the homepage, type in your favorite burger, then click submit to let the fun begin!
