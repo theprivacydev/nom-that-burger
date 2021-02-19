@@ -1,5 +1,4 @@
-$(function() {
-
+$( document ).ready(function() {
     $('.devour-btn').on('click', (event) => {
         let id = $(this).data('id');
 
@@ -8,7 +7,7 @@ $(function() {
         }
         console.log('right after click burger status is: ', burgerStatus);
 
-        $.ajax('/api/burgers/' + id, {
+        $.ajax('/api/burgers/:' + id, {
             type: "PUT",
             data: burgerStatus
         }).then(
