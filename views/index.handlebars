@@ -19,13 +19,13 @@
             <ul>
                 <h2>Plate</h2>
                 {{#each burgers}}
-                {{#unless devoured}}
-                <li>
-                    <img src="https://img.icons8.com/emoji/48/000000/hamburger-emoji.png" />
-                    {{ burger_name }}
-                    <button class="devour-btn" data-id="{{id}}">Devour Burger!</button>
-                </li>
-                {{/unless}}
+                    {{#unless devoured}}
+                    <li>
+                        <img src="https://img.icons8.com/emoji/48/000000/hamburger-emoji.png" />
+                        {{ burger_name }}
+                        <button class="devour-btn" data-id="{{id}}">Devour Burger!</button>
+                    </li>
+                    {{/unless}}
                 {{/each}}
             </ul>
 
@@ -39,13 +39,13 @@
             <ul>
                 <h2>Devoured</h2>
                 {{#each burgers}}
-                {{#if devoured}}
-                <li>
-                    <img src="https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" />
-                    {{ burger_name }}
+                    {{#if devoured}}
+                    <li>
+                        <img src="https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" />
+                        {{ burger_name }}
 
-                </li>
-                {{/if}}
+                    </li>
+                    {{/if}}
                 {{/each}}
             </ul>
 
