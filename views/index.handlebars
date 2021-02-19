@@ -1,31 +1,71 @@
 {{!-- Create handlebars template--}}
+<header>
+    <h1>Nom that Burger</h1>
+    <h2>Which Burger will you choose?</h2>
+</header>
 
-<h1>Nom that Burger</h1>
-<h2>Which Burger will you choose?</h2>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            <li> 
-                {{ burger_name }} 
-                <button class="devour-btn" data-id="{{id}}">Devour Burger!</button>
-            </li>
-        {{/unless}}
-    {{/each}}
-</ul>
+<div class=".burger-jpg">
+    <img src="/assets/img/burgers.jpg">
+</div>
 
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-        <li> {{ burger_name }}</li>
-        {{/if}}
-    {{/each}}
-</ul>
 
-<h2>Add Your Own Burger!</h2>
-<form>
-    <div>
-        <input id="input-burger" type="text"><br>
-        <button class="make-burger-btn" type="submit">Make My Burger!</button>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+            <ul>
+                <h2>Plate</h2>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    <img src="https://img.icons8.com/emoji/48/000000/hamburger-emoji.png" />
+                    {{ burger_name }}
+                    <button class="devour-btn" data-id="{{id}}">Devour Burger!</button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+
+        {{!-- End column --}}
+        </div>
+
+        <div class="col-sm">
+
+
+            <ul>
+                <h2>Devoured</h2>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>
+                    <img src="https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" />
+                    {{ burger_name }}
+
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+
+
+        {{!-- End column --}}
+        </div>
+    {{!-- End row --}}
     </div>
-</form>
+{{!-- End container --}}
+</div>
+
+
+
+
+
+
+    <h2>Add Your Own Burger!</h2>
+    <form>
+        <div>
+            <input id="input-burger" type="text"><br>
+            <button class="make-burger-btn" type="submit">Make My Burger!</button>
+        </div>
+    </form>

@@ -4,6 +4,7 @@ const orm = {
 
     selectAll: (table, cb) => {
         let query = "SELECT * FROM " + table + ";"
+        console.log("select all orm.js: ", query)
         connection.query(query, (err, res) => {
             if (err) throw err;
             cb(res);
@@ -22,7 +23,7 @@ const orm = {
         query += printQuesMarks(vals.length);
         query += ") ";
 
-        console.log(query);
+        console.log("in insert one:", query);
 
 
         connection.query(query, vals, (err, res) => {
@@ -41,7 +42,7 @@ const orm = {
         query += " WHERE ";
         query += condition;
 
-        console.log(query);
+        console.log("update one: ", query);
 
         connection.query(query, (err, res) => {
             if (err) throw err;
@@ -53,10 +54,10 @@ const orm = {
 }
 
 
-function printQuesMarks(parameter) {
+function printQuesMarks(number) {
     let arr = [];
 
-    for (let i = 0; i< parameter; i++) {
+    for (let i = 0; i < number; i++) {
         arr.push("?");
     }
     return arr.toString();
