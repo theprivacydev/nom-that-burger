@@ -24,6 +24,8 @@ There are no special installation instructions required for this application as 
 ## Usage
 To use this application, simply click on the deployed application link, the click into the text box on the homepage, type in your favorite burger, then click submit to let the fun begin!
 
+![burger app screenshot](./public/assets/img/burger-app-screenshot.png)
+
 ## Technologies
 * HTML5 
 * CSS3 
