@@ -32,3 +32,19 @@ button {
 .sub-header {
     margin-bottom: 30px;
 }
+
+.devour-btn {
+    margin-left: 15px;
+}
+
+.plate-item {
+    margin-left: 70px;
+}
+
+.devoured-list {
+    margin-left: 40px;
+}
+
+.devoured-item {
+    margin-left: 30px;
+}
