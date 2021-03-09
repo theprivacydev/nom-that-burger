@@ -1,9 +1,15 @@
 body {
     text-align: center;
-    background-color: brown;
+    background: url("https://image.shutterstock.com/image-photo/wooden-table-checkered-textile-food-260nw-1540132997.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: sans-serif;
     margin: 30px;
     padding: 20px;
+}
+
+.head-title {
+    font-weight: bolder;
 }
 
 .burger-jpg {
@@ -13,6 +19,9 @@ body {
 }
 
 ul {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(146, 114, 72, 0.8);
     text-align: left;
     list-style-type: none;
     font-size: larger;

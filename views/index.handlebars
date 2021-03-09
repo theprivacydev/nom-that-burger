@@ -1,6 +1,6 @@
 {{!-- Create handlebars template--}}
 <header>
-    <h1>Nom that Burger</h1>
+    <h1 class="head-title">Nom that Burger</h1>
     <h2 class="sub-header">Which Burger will you choose?</h2>
 </header>
 
@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-sm">
 
-            <ul>
+            <ul class="list">
                 <h2 class="list-title">Plate</h2>
                 {{#each burgers}}
                     {{#unless devoured}}
@@ -36,7 +36,7 @@
         <div class="col-sm">
 
 
-            <ul class="devoured-list">
+            <ul class=" list devoured-list">
                 <h2 class="list-title">Devoured</h2>
                 {{#each burgers}}
                     {{#if devoured}}
