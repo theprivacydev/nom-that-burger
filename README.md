@@ -52,6 +52,6 @@ To use this application, simply click on the deployed application link, the clic
 
 ## Questions
 For additional questions please contact:
-* Jayme Mizelle
-* Email: jayme.coder@gmail.com
-* https://github.com/jaymemizelle/
+* The Privacy Dev
+* Email: theprivacydev@protonmail.com
+* https://github.com/theprivacydev/
